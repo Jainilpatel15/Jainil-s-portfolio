@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: rgb(21, 19, 18);
+  --white: rgb(255, 255, 255);
+  --gray: rgb(153, 143, 143);
+  --green: rgb(197, 255, 65);
+  --orange: rgb(244, 108, 56);
+  --dark-gray: rgb(106, 107, 110);
+  --soft-gray: rgba(182, 180, 189, 0.2);
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.page-wrapper {
+  padding-top: 160px;
+  min-height: 100vh;
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  gap: 100px;
+  align-items: flex-start;
+}
+
+.left-col {
+  position: sticky;
+  top: 40px;
+  flex-shrink: 0;
+}
+
+.right-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-title {
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 100%;
+  color: var(--white);
+}
+
+.page-title {
+  font-size: 110px;
+  font-weight: 700;
+  line-height: 100%;
+  color: var(--white);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .left-col {
+    position: static;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 48px;
+  }
+
+  .page-title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .left-col {
+    position: static;
+    width: 100%;
+    order: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .right-col {
+    order: 1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding-top: 130px;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
