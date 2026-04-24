@@ -16,7 +16,7 @@ export default function Experience() {
             <PageTitle>
               12 YEARS OF
               <br />
-              EXPERIENCE
+              <span className="title-dark">EXPERIENCE</span>
             </PageTitle>
             <div style={{ marginTop: 20 }}>
               {jobs.map((j) => (
@@ -27,7 +27,7 @@ export default function Experience() {
               <SectionTitle>
                 LET'S WORK
                 <br />
-                TOGETHER
+                <span className="title-dark">TOGETHER</span>
               </SectionTitle>
               <ContactForm />
             </section>

@@ -16,7 +16,7 @@ export default function Blog() {
             <PageTitle>
               DESIGN
               <br />
-              THOUGHTS
+              <span className="title-dark">THOUGHTS</span>
             </PageTitle>
             <div className="blog-list" style={{ marginTop: 20 }}>
               {blogPosts.map((b) => (
@@ -27,7 +27,7 @@ export default function Blog() {
               <SectionTitle>
                 LET'S WORK
                 <br />
-                TOGETHER
+                <span className="title-dark">TOGETHER</span>
               </SectionTitle>
               <ContactForm />
             </section>

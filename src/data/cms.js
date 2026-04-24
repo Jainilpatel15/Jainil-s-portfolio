@@ -3,11 +3,11 @@ export const profile = {
   title: 'AIML ENGINEER',
   bio: 'A Computer Science student specializing in AI, focused on creating intelligent systems and secure web applications.',
   description:
-    'Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.',
+    'Passionate about building intelligent and secure digital solutions. Specialize in transforming ideas into impactful AI-driven products.',
   stats: [
-    { num: '+12', label: 'YEARS OF EXPERIENCE' },
-    { num: '+46', label: 'PROJECTS COMPLETED' },
-    { num: '+20', label: 'WORLDWIDE CLIENTS' },
+    { num: '+0', label: 'YEARS OF EXPERIENCE' },
+    { num: '+8', label: 'PROJECTS COMPLETED' },
+    { num: '+0', label: 'WORLDWIDE CLIENTS' },
   ],
   social: {
     github: 'https://github.com/',

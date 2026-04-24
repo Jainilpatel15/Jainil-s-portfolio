@@ -26,6 +26,9 @@ function ArrowLink({ bg, color, onClick }) {
 
 export default function Home() {
   const navigate = useNavigate();
+  const titleParts = profile.title.trim().split(/\s+/);
+  const highlightedTitleWord = titleParts.pop() || profile.title;
+  const titleLead = titleParts.join(' ');
 
   return (
     <div className="page-wrapper">
@@ -38,7 +41,10 @@ export default function Home() {
           <div className="right-col">
             <section className="hero">
               <div className="hero-info">
-                <h1 className="hero-title">{profile.title}</h1>
+                <h1 className="hero-title">
+                  {titleLead ? `${titleLead} ` : ''}
+                  <span className="title-dark">{highlightedTitleWord}</span>
+                </h1>
                 <p className="hero-desc">{profile.description}</p>
               </div>
 
@@ -98,7 +104,7 @@ export default function Home() {
               <SectionTitle>
                 RECENT
                 <br />
-                PROJECTS
+                <span className="title-dark">PROJECTS</span>
               </SectionTitle>
               {projects.slice(0, 2).map((p) => (
                 <ProjectCard key={p.id} {...p} />
@@ -109,7 +115,7 @@ export default function Home() {
               <SectionTitle>
                 12 YEARS OF
                 <br />
-                EXPERIENCE
+                <span className="title-dark">EXPERIENCE</span>
               </SectionTitle>
               {jobs.slice(0, 2).map((j) => (
                 <JobCard key={j.id} {...j} />
@@ -120,7 +126,7 @@ export default function Home() {
               <SectionTitle>
                 PREMIUM
                 <br />
-                TOOLS
+                <span className="title-dark">TOOLS</span>
               </SectionTitle>
               <div className="tools-grid">
                 {tools.slice(0, 4).map((t) => (
@@ -133,7 +139,7 @@ export default function Home() {
               <SectionTitle>
                 DESIGN
                 <br />
-                THOUGHTS
+                <span className="title-dark">THOUGHTS</span>
               </SectionTitle>
               <div className="blog-list">
                 {blogPosts.slice(0, 1).map((b) => (
@@ -146,7 +152,7 @@ export default function Home() {
               <SectionTitle>
                 LET'S WORK
                 <br />
-                TOGETHER
+                <span className="title-dark">TOGETHER</span>
               </SectionTitle>
               <ContactForm />
             </section>

@@ -16,7 +16,7 @@ export default function Projects() {
             <PageTitle>
               RECENT
               <br />
-              PROJECTS
+              <span className="title-dark">PROJECTS</span>
             </PageTitle>
             <div style={{ marginTop: 20 }}>
               {projects.map((p) => (
@@ -27,7 +27,7 @@ export default function Projects() {
               <SectionTitle>
                 LET'S WORK
                 <br />
-                TOGETHER
+                <span className="title-dark">TOGETHER</span>
               </SectionTitle>
               <ContactForm />
             </section>

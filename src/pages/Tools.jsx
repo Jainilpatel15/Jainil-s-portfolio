@@ -16,7 +16,7 @@ export default function Tools() {
             <PageTitle>
               PREMIUM
               <br />
-              TOOLS
+              <span className="title-dark">TOOLS</span>
             </PageTitle>
             <div className="tools-grid" style={{ marginTop: 20 }}>
               {tools.map((t) => (
@@ -27,7 +27,7 @@ export default function Tools() {
               <SectionTitle>
                 LET'S WORK
                 <br />
-                TOGETHER
+                <span className="title-dark">TOGETHER</span>
               </SectionTitle>
               <ContactForm />
             </section>
