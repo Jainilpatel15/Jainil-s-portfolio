@@ -1,7 +1,7 @@
 export const profile = {
-  name: 'Aaabad Ahmed',
-  title: 'SOFTWARE ENGINEER',
-  bio: 'A Software Engineer who has developed countless innovative solutions.',
+  name: 'Jainil Patel',
+  title: 'AIML ENGINEER',
+  bio: 'A Computer Science student specializing in AI, focused on creating intelligent systems and secure web applications.',
   description:
     'Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.',
   stats: [
@@ -10,10 +10,10 @@ export const profile = {
     { num: '+20', label: 'WORLDWIDE CLIENTS' },
   ],
   social: {
-    dribbble: 'https://dribbble.com/',
-    twitter: 'https://twitter.com/',
+    github: 'https://github.com/',
     instagram: 'https://www.instagram.com/',
-    email: 'mailto:your@email.com',
+    linkedin: 'https://www.linkedin.com/',
+    x: 'https://x.com/',
   },
 };
 
