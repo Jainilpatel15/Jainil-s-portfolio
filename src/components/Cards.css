@@ -1,19 +1,50 @@
 .arrow-btn {
-  width: 32px;
-  border-radius: 18px;
-  overflow: hidden;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   display: flex;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  align-items: center;
   justify-content: center;
   cursor: pointer;
-  gap: 18px;
-  padding: 14px 16px 14px 14px;
+  border: 1px solid rgba(244, 108, 56, 0.45);
+  background: rgba(244, 108, 56, 0.08);
+  color: var(--orange);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
   align-self: flex-end;
-  transition: transform 0.24s ease, background 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+}
 
 .arrow-btn:hover {
-  transform: scale(1.1);
+  transform: translateY(-2px);
+  background: var(--orange);
+  color: var(--black);
+}
+
+.arrow-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.project-card {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px;
+  margin-bottom: 18px;
+  transition: transform 0.24s ease, background 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+  cursor: pointer;
+}
+
 .project-card::before {
   content: '';
   position: absolute;
@@ -21,7 +52,7 @@
   height: 220px;
   top: -120px;
   left: -84px;
-  background: radial-gradient(circle, rgba(244, 108, 56, 0.22) 0%, rgba(244, 108, 56, 0) 72%);
+  background: radial-gradient(circle, rgba(244, 108, 56, 0.2) 0%, rgba(244, 108, 56, 0) 72%);
   opacity: 0;
   transition: opacity 0.24s ease;
   pointer-events: none;
@@ -32,55 +63,27 @@
   z-index: 1;
 }
 
-}
+.project-card:hover {
   transform: translateY(-3px);
   background: linear-gradient(95deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.03));
   border-color: rgba(244, 108, 56, 0.35);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
 }
 
 .project-card:hover::before {
   opacity: 1;
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-  width: 150px;
-  height: 112px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.project-card {
-  width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  position: relative;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 14px;
-  margin-bottom: 20px;
-  transition: background 0.22s ease, box-shadow 0.22s ease;
-  cursor: pointer;
-}
-
-.project-card:hover {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025));
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
 }
 
 .project-thumb {
-  width: 136px;
-  height: 102px;
+  width: 150px;
+  height: 112px;
   border-radius: 12px;
   flex-shrink: 0;
-  object-fit: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.28);
 }
 
 .project-thumb img {
@@ -103,21 +106,19 @@
   justify-content: space-between;
   align-items: center;
   gap: 18px;
-  padding: 0;
 }
 
 .project-copy {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .project-name {
   font-size: clamp(34px, 3.2vw, 46px);
   font-weight: 700;
   color: var(--white);
-  line-height: 1.02;
+  line-height: 1.03;
   letter-spacing: -0.02em;
 }
 
@@ -135,8 +136,8 @@
 }
 
 .project-arrow {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -145,7 +146,6 @@
   background: rgba(244, 108, 56, 0.08);
   border: 1px solid rgba(244, 108, 56, 0.45);
   flex-shrink: 0;
-  opacity: 0.94;
   transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease, border-color 0.24s ease;
 }
 
@@ -167,7 +167,6 @@
   width: 100%;
   border-radius: 16px;
   padding: 24px 16px;
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -229,10 +228,10 @@
   border: none;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   transition: transform 0.2s ease;
   cursor: pointer;
-  margin-bottom: 48px;
+  margin-bottom: 38px;
 }
 
 .tool-card:hover {
@@ -240,9 +239,9 @@
 }
 
 .tool-emoji {
-  font-size: 36px;
-  width: 76px;
-  height: 76px;
+  font-size: 34px;
+  width: 72px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,10 +255,11 @@
   flex-direction: column;
   gap: 4px;
   flex: 1;
+  min-width: 0;
 }
 
 .tool-name {
-  font-size: 36px;
+  font-size: clamp(30px, 3.1vw, 36px);
   font-weight: 700;
   color: var(--white);
   line-height: 1.1;
@@ -267,7 +267,7 @@
 }
 
 .tool-cat {
-  font-size: 17px;
+  font-size: 16px;
   color: #999999;
   font-weight: 400;
   line-height: 1.3;
@@ -280,12 +280,12 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 0 0 40px 0;
+  padding: 0 0 34px 0;
   align-items: flex-start;
   transition: transform 0.2s ease;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 
 .blog-card:last-child {
@@ -310,13 +310,13 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
   position: relative;
 }
 
 .blog-title {
-  font-size: 38px;
+  font-size: clamp(32px, 3.5vw, 38px);
   font-weight: 700;
   color: var(--white);
   line-height: 1.2;
@@ -325,10 +325,10 @@
 }
 
 .blog-desc {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--gray);
   line-height: 1.6;
-  max-width: 90%;
+  max-width: 92%;
 }
 
 .blog-meta {
@@ -344,7 +344,7 @@
   top: 8px;
   right: 0;
   color: var(--orange);
-  opacity: 0.7;
+  opacity: 0.76;
   transition: all 0.2s ease;
 }
 
@@ -358,20 +358,20 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
   width: 100%;
-  margin-top: 32px;
+  margin-top: 26px;
 }
 
 .form-row {
   display: flex;
-  gap: 32px;
+  gap: 24px;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   flex: 1;
 }
 
@@ -425,7 +425,7 @@
   color: var(--white);
   font-weight: 600;
   font-size: 17px;
-  padding: 20px 40px;
+  padding: 18px 34px;
   border-radius: 10px;
   cursor: pointer;
   align-self: stretch;
@@ -442,11 +442,11 @@
 
 .footer {
   width: 100%;
-  padding: 80px 0;
+  padding: 72px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 72px;
 }
 
 .footer p {
@@ -454,19 +454,25 @@
   color: var(--gray);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
+  .project-name {
+    font-size: clamp(30px, 3.6vw, 40px);
+  }
+
+  .tool-name {
+    font-size: clamp(26px, 3vw, 34px);
+  }
+}
+
+@media (max-width: 992px) {
   .project-card {
     gap: 14px;
     padding: 12px;
   }
 
   .project-thumb {
-    width: 130px;
-    height: 96px;
-  }
-
-  .project-name {
-    font-size: clamp(28px, 5.4vw, 36px);
+    width: 134px;
+    height: 98px;
   }
 
   .project-tag {
@@ -474,33 +480,120 @@
   }
 
   .project-arrow {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
   }
 
-  .blog-card {
-    flex-direction: column;
+  .tool-card {
+    margin-bottom: 30px;
   }
 
-  .blog-thumb {
-    width: 100%;
-    height: 160px;
+  .tool-emoji {
+    width: 66px;
+    height: 66px;
+    font-size: 30px;
+  }
+
+  .blog-title {
+    font-size: clamp(28px, 4vw, 34px);
+  }
+
+  .blog-desc {
+    max-width: 100%;
+  }
+
+  .contact-form {
+    gap: 24px;
+  }
+
+  .form-row {
+    gap: 18px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .project-card {
     gap: 12px;
+    padding: 11px;
+    border-radius: 16px;
+  }
+
+  .project-thumb {
+    width: 120px;
+    height: 88px;
+    border-radius: 10px;
+  }
+
+  .project-name {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .project-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .project-arrow svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .job-card {
+    padding: 20px 14px;
+  }
+
+  .tool-card {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .tool-emoji {
+    width: 58px;
+    height: 58px;
+    font-size: 26px;
+    border-radius: 12px;
+  }
+
+  .tool-name {
+    font-size: clamp(22px, 6vw, 30px);
+  }
+
+  .tool-cat {
+    font-size: 14px;
+  }
+
+  .blog-title {
+    font-size: clamp(24px, 6.5vw, 30px);
+  }
+
+  .blog-meta {
+    font-size: 14px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .form-btn {
+    font-size: 16px;
+    padding: 16px 30px;
+  }
+}
+
+@media (max-width: 560px) {
+  .project-card {
+    gap: 10px;
     padding: 10px;
   }
 
   .project-thumb {
-    width: 106px;
-    height: 78px;
+    width: 104px;
+    height: 76px;
   }
 
   .project-name {
-    font-size: clamp(24px, 7vw, 30px);
+    font-size: clamp(22px, 7vw, 28px);
   }
 
   .project-tag {
@@ -509,17 +602,45 @@
   }
 
   .project-arrow {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
   }
 
   .project-arrow svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 
-  .form-row {
-    flex-direction: column;
-    gap: 32px;
+  .job-company {
+    font-size: 18px;
+  }
+
+  .job-desc,
+  .job-date {
+    font-size: 13px;
+  }
+
+  .blog-card {
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+  }
+
+  .blog-desc {
+    font-size: 14px;
+  }
+
+  .contact-form {
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .form-input {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .footer {
+    padding: 52px 0;
+    margin-top: 52px;
   }
 }

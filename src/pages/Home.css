@@ -1,7 +1,7 @@
 .hero {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: clamp(34px, 6vw, 60px);
 }
 
 .hero-info {
@@ -11,23 +11,23 @@
 }
 
 .hero-title {
-  font-size: 110px;
+  font-size: clamp(54px, 11vw, 110px);
   font-weight: 700;
-  line-height: 100%;
+  line-height: 0.98;
   letter-spacing: 0;
   color: var(--white);
 }
 
 .hero-desc {
-  font-size: 18px;
+  font-size: clamp(15px, 2vw, 18px);
   line-height: 1.4;
   color: var(--gray);
-  max-width: 480px;
+  max-width: 620px;
 }
 
 .hero-stats {
   display: flex;
-  gap: 40px;
+  gap: clamp(20px, 4vw, 40px);
   align-items: center;
   flex-wrap: wrap;
 }
@@ -38,7 +38,7 @@
 }
 
 .stat-num {
-  font-size: 72px;
+  font-size: clamp(42px, 7vw, 72px);
   font-weight: 700;
   line-height: 1;
   color: var(--white);
@@ -56,14 +56,14 @@
 
 .hero-cards {
   display: flex;
-  gap: 36px;
-  height: 300px;
+  gap: clamp(16px, 3vw, 36px);
+  height: clamp(250px, 28vw, 300px);
 }
 
 .hero-card {
   border-radius: 14px;
   overflow: hidden;
-  padding: 42px 24px 24px;
+  padding: clamp(28px, 3.5vw, 42px) clamp(18px, 2vw, 24px) clamp(18px, 2vw, 24px);
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -191,7 +191,7 @@
 }
 
 .hero-card-label {
-  font-size: 30px;
+  font-size: clamp(22px, 2.9vw, 30px);
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.15;
@@ -200,21 +200,21 @@
 }
 
 .hero-card--orange .hero-card-label {
-  max-width: 326px;
+  max-width: min(326px, 100%);
 }
 
 .hero-card--green .hero-card-label {
-  max-width: 420px;
+  max-width: min(420px, 100%);
 }
 
 .arrow-btn-hero {
-  width: 42px;
-  height: 42px;
+  width: clamp(38px, 4.6vw, 42px);
+  height: clamp(38px, 4.6vw, 42px);
   border-radius: 10px;
   border: 1.4px solid currentColor;
   position: absolute;
-  right: 24px;
-  bottom: 24px;
+  right: clamp(16px, 2vw, 24px);
+  bottom: clamp(16px, 2vw, 24px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,8 +227,8 @@
 }
 
 .arrow-btn-hero svg {
-  width: 22px;
-  height: 22px;
+  width: clamp(18px, 2.6vw, 22px);
+  height: clamp(18px, 2.6vw, 22px);
   stroke: currentColor;
   fill: none;
   stroke-width: 2;
@@ -236,41 +236,53 @@
   stroke-linejoin: round;
 }
 
-@media (max-width: 900px) {
-  .hero-title {
-    font-size: 56px;
-  }
-
+@media (max-width: 1100px) {
   .hero-cards {
     flex-direction: column;
-    min-height: 0;
+    height: auto;
   }
 
   .hero-card {
     width: 100%;
+    min-height: 250px;
     height: auto;
     flex: 0 0 auto;
   }
 
-  .hero-cards {
-    height: auto;
+  .hero-card-bottom {
+    padding-right: 58px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    gap: 30px;
   }
 
-  .hero-card-label {
-    font-size: 24px;
+  .hero-stats {
+    gap: 18px;
   }
 
-  .hero-card {
-    min-height: 260px;
+  .stat-num {
+    font-size: clamp(34px, 8vw, 52px);
+  }
+
+  .stat-label {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 600px) {
-  .hero-title {
-    font-size: 40px;
+  .hero-card {
+    min-height: 220px;
   }
 
-  .hero-card-label {
-    font-size: 20px;
+  .hero-card-bottom {
+    gap: 12px;
+    padding-right: 50px;
+  }
+
+  .hero-card-wave {
+    border-width: 4px;
   }
 }

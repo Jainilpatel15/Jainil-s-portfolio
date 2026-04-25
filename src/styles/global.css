@@ -51,21 +51,21 @@ button {
 }
 
 .page-wrapper {
-  padding-top: 160px;
+  padding-top: clamp(112px, 11vw, 160px);
   min-height: 100vh;
 }
 
 .outer {
   display: flex;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 clamp(14px, 2.4vw, 24px);
 }
 
 .container {
   width: 100%;
   max-width: 1140px;
   display: flex;
-  gap: 100px;
+  gap: clamp(32px, 6vw, 100px);
   align-items: flex-start;
 }
 
@@ -83,21 +83,21 @@ button {
 }
 
 .section {
-  padding-top: 120px;
+  padding-top: clamp(76px, 9vw, 120px);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(16px, 2vw, 24px);
 }
 
 .section-title {
-  font-size: 90px;
+  font-size: clamp(46px, 9.5vw, 90px);
   font-weight: 700;
   line-height: 100%;
   color: var(--white);
 }
 
 .page-title {
-  font-size: 110px;
+  font-size: clamp(54px, 10.8vw, 110px);
   font-weight: 700;
   line-height: 100%;
   color: var(--white);
@@ -110,7 +110,7 @@ button {
 .tools-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 60px;
+  gap: 0 clamp(18px, 4vw, 60px);
   margin-top: 20px;
 }
 
@@ -122,28 +122,14 @@ button {
 }
 
 @media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .left-col {
-    position: static;
-    width: 100%;
-  }
-
-  .section-title {
-    font-size: 48px;
-  }
-
-  .page-title {
-    font-size: 56px;
+  .page-wrapper {
+    padding-top: 120px;
   }
 }
 
 @media (max-width: 1200px) {
   .container {
-    gap: 48px;
+    gap: 40px;
   }
 }
 
@@ -169,10 +155,15 @@ button {
 
 @media (max-width: 600px) {
   .page-wrapper {
-    padding-top: 130px;
+    padding-top: 108px;
   }
 
   .tools-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .blog-list {
+    margin-top: 14px;
   }
 }
