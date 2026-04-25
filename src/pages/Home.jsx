@@ -26,12 +26,45 @@ function ArrowLink({ bg, color, onClick }) {
 
 export default function Home() {
   const navigate = useNavigate();
+  const homeRef = React.useRef(null);
   const titleParts = profile.title.trim().split(/\s+/);
   const highlightedTitleWord = titleParts.pop() || profile.title;
   const titleLead = titleParts.join(' ');
 
+  React.useEffect(() => {
+    const root = homeRef.current;
+    if (!root) return;
+
+    const targets = root.querySelectorAll('.scroll-float-target');
+    if (!targets.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.22,
+        rootMargin: '0px 0px -12% 0px',
+      }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="page-wrapper">
+    <div className="page-wrapper" ref={homeRef}>
       <div className="outer">
         <div className="container">
           <div className="left-col">
@@ -41,7 +74,7 @@ export default function Home() {
           <div className="right-col">
             <section className="hero">
               <div className="hero-info">
-                <h1 className="hero-title">
+                <h1 className="hero-title scroll-float-target">
                   {titleLead ? `${titleLead} ` : ''}
                   <span className="title-dark">{highlightedTitleWord}</span>
                 </h1>
@@ -101,11 +134,13 @@ export default function Home() {
             </section>
 
             <section className="section section-projects">
-              <SectionTitle>
-                RECENT
-                <br />
-                <span className="title-dark">PROJECTS</span>
-              </SectionTitle>
+              <div className="scroll-float-target scroll-float-delay-1">
+                <SectionTitle>
+                  RECENT
+                  <br />
+                  <span className="title-dark">PROJECTS</span>
+                </SectionTitle>
+              </div>
               <div className="projects-swap-wrapper">
                 <CardSwap
                   width={600}
@@ -135,22 +170,26 @@ export default function Home() {
             </section>
 
             <section className="section">
-              <SectionTitle>
-                0 YEARS OF
-                <br />
-                <span className="title-dark">EXPERIENCE</span>
-              </SectionTitle>
+              <div className="scroll-float-target scroll-float-delay-1">
+                <SectionTitle>
+                  0 YEARS OF
+                  <br />
+                  <span className="title-dark">EXPERIENCE</span>
+                </SectionTitle>
+              </div>
               {jobs.slice(0, 2).map((j) => (
                 <JobCard key={j.id} {...j} />
               ))}
             </section>
 
             <section className="section">
-              <SectionTitle>
-                PREMIUM
-                <br />
-                <span className="title-dark">TOOLS</span>
-              </SectionTitle>
+              <div className="scroll-float-target scroll-float-delay-1">
+                <SectionTitle>
+                  PREMIUM
+                  <br />
+                  <span className="title-dark">TOOLS</span>
+                </SectionTitle>
+              </div>
               <div className="tools-grid">
                 {tools.slice(0, 4).map((t) => (
                   <ToolCard key={t.id} {...t} />
@@ -159,11 +198,13 @@ export default function Home() {
             </section>
 
             <section className="section">
-              <SectionTitle>
-                DESIGN
-                <br />
-                <span className="title-dark">THOUGHTS</span>
-              </SectionTitle>
+              <div className="scroll-float-target scroll-float-delay-1">
+                <SectionTitle>
+                  DESIGN
+                  <br />
+                  <span className="title-dark">THOUGHTS</span>
+                </SectionTitle>
+              </div>
               <div className="blog-list">
                 {blogPosts.map((b) => (
                   <BlogCard key={b.id} {...b} />
@@ -172,11 +213,13 @@ export default function Home() {
             </section>
 
             <section className="section">
-              <SectionTitle>
-                LET'S WORK
-                <br />
-                <span className="title-dark">TOGETHER</span>
-              </SectionTitle>
+              <div className="scroll-float-target scroll-float-delay-1">
+                <SectionTitle>
+                  LET'S WORK
+                  <br />
+                  <span className="title-dark">TOGETHER</span>
+                </SectionTitle>
+              </div>
               <ContactForm />
             </section>
           </div>

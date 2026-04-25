@@ -4,6 +4,27 @@
   gap: clamp(34px, 6vw, 60px);
 }
 
+.scroll-float-target {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0) scale(0.985);
+  filter: blur(7px);
+  will-change: transform, opacity, filter;
+  transition:
+    opacity 0.78s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.9s cubic-bezier(0.18, 0.82, 0.2, 1),
+    filter 0.62s ease;
+}
+
+.scroll-float-target.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+.scroll-float-delay-1 {
+  transition-delay: 0.08s;
+}
+
 .hero-info {
   display: flex;
   flex-direction: column;
@@ -284,6 +305,16 @@
 
   .hero-card-wave {
     border-width: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-float-target,
+  .scroll-float-target.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
   }
 }
 
