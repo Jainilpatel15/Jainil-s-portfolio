@@ -36,7 +36,7 @@
 .nav-icon svg {
   width: 18px;
   height: 18px;
-  stroke: currentColor;
+  stroke: white;
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
@@ -45,23 +45,27 @@
 
 .nav-tooltip {
   position: absolute;
-  bottom: -30px;
+  bottom: -36px;
   left: 50%;
-  transform: translateX(-50%);
-  background: var(--white);
-  color: var(--black);
-  font-size: 10px;
+  transform: translateX(-50%) translateY(-5px);
+  background: #2A2A2A;
+  color: #FFFFFF;
+  font-size: 11px;
   font-weight: 500;
-  padding: 3px 8px;
-  border-radius: 6px;
+  padding: 6px 12px;
+  border-radius: 12px;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .nav-icon:hover .nav-tooltip {
   opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 @media (max-width: 600px) {

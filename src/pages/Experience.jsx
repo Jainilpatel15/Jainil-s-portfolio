@@ -14,7 +14,7 @@ export default function Experience() {
           </div>
           <div className="right-col">
             <PageTitle>
-              12 YEARS OF
+              0 YEARS OF
               <br />
               <span className="title-dark">EXPERIENCE</span>
             </PageTitle>

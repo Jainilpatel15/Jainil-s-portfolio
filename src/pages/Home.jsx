@@ -113,7 +113,7 @@ export default function Home() {
 
             <section className="section">
               <SectionTitle>
-                12 YEARS OF
+                0 YEARS OF
                 <br />
                 <span className="title-dark">EXPERIENCE</span>
               </SectionTitle>
@@ -142,7 +142,7 @@ export default function Home() {
                 <span className="title-dark">THOUGHTS</span>
               </SectionTitle>
               <div className="blog-list">
-                {blogPosts.slice(0, 1).map((b) => (
+                {blogPosts.map((b) => (
                   <BlogCard key={b.id} {...b} />
                 ))}
               </div>
