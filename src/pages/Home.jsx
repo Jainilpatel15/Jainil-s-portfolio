@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import StickyProfile from '../components/StickyProfile';
+import CardSwap, { Card } from '../components/CardSwap';
 import {
-  ProjectCard,
   JobCard,
   ToolCard,
   BlogCard,
@@ -100,15 +100,38 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="section">
+            <section className="section section-projects">
               <SectionTitle>
                 RECENT
                 <br />
                 <span className="title-dark">PROJECTS</span>
               </SectionTitle>
-              {projects.slice(0, 2).map((p) => (
-                <ProjectCard key={p.id} {...p} />
-              ))}
+              <div className="projects-swap-wrapper">
+                <CardSwap
+                  width={600}
+                  height={450}
+                  cardDistance={50}
+                  verticalDistance={60}
+                  delay={4000}
+                  pauseOnHover={true}
+                  skewAmount={4}
+                  easing="elastic"
+                >
+                  {projects.slice(0, 4).map((project) => (
+                    <Card key={project.id}>
+                      <div className="project-card-swap">
+                        {project.image && (
+                          <img src={project.image} alt={project.name} className="project-card-image" />
+                        )}
+                        <div className="project-card-content">
+                          <h3 className="project-card-title">{project.name}</h3>
+                          <p className="project-card-tag">{project.tag}</p>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </CardSwap>
+              </div>
             </section>
 
             <section className="section">

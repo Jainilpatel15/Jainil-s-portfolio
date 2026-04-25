@@ -34,27 +34,41 @@ export const projects = [
   },
   {
     id: 3,
+    name: 'AIRA expert',
+    tag: 'Expert Talk is an AI-powered platform that connects users with industry experts for personalized mentorship and real-time guidance.',
+    color: '#1a1a2a',
+    image: '/src/assets/expert-talk.jpeg',
+  },
+  {
+    id: 4,
+    name: 'student performance prediction',
+    tag: 'A machine learning-based system that predicts student performance to support data-driven academic insights and better decision-making.',
+    color: '#1a1a2a',
+    image: '/src/assets/student-performance-prediction.jpg',
+  },
+  {
+    id: 5,
     name: 'YOGA WEBSITE',
     tag: 'A full-stack yoga web application designed to promote mindfulness, balance, and a healthy lifestyle.',
     color: '#1a2a1a',
     image: '/src/assets/yoga.jpg',
   },
   {
-    id: 4,
+    id: 6,
     name: 'furniture website',
     tag: 'A modern furniture website designed to showcase and sell stylish, high-quality furniture with a seamless user experience.',
     color: '#1a1a2a',
     image: '/src/assets/furniture.jpg',
   },
   {
-    id: 5,
+    id: 7,
     name: 'hospital application',
     tag: 'A healthcare application that helps travelers find trusted hospitals, English-speaking doctors, and transparent medical services in unfamiliar cities.',
     color: '#1a1a2a',
     image: '/src/assets/hospital.jpg',
   },
   {
-    id: 6,
+    id: 8,
     name: 'disease prediction',
     tag: 'A disease prediction system that uses machine learning to predict the risk of heart disease and stroke for early diagnosis and better decision-making.',
     color: '#1a1a2a',
@@ -67,13 +81,7 @@ export const projects = [
     color: '#1a1a2a',
     image: '/src/assets/student-performance-prediction.jpg',
   },
-  {
-    id: 8,
-    name: 'AIRA expert',
-    tag: 'Expert Talk is an AI-powered platform that connects users with industry experts for personalized mentorship and real-time guidance.',
-    color: '#1a1a2a',
-    image: '/src/assets/expert-talk.jpeg',
-  },
+  
 ];
 
 export const jobs = [
