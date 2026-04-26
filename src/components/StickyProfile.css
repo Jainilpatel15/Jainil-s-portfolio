@@ -30,6 +30,7 @@
   opacity: 1;
   visibility: visible;
   transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
+  margin: 0 auto;
 }
 
 .sticky-profile:hover {
@@ -178,7 +179,8 @@
 
 @media (max-width: 1100px) and (min-width: 700px) {
   .sticky-profile {
-    --card-width: 781px;
+    --card-width: 100%;
+    max-width: 781px;
     --card-height: 540px;
     --image-width: 240px;
     --image-height: 284px;
@@ -207,15 +209,15 @@
   .social-icons {
     height: 36px;
   }
-
 }
 
 @media (max-width: 699px) {
   .sticky-profile {
-    --card-width: 344px;
+    --card-width: 100%;
+    max-width: 344px;
     --card-height: 461px;
     --image-height: 210px;
-    width: min(var(--card-width), 100%);
+    width: 100%;
     min-width: 0;
     border-radius: 16px;
     padding: 14px 16px 14px;
@@ -254,5 +256,38 @@
     height: 36px;
     gap: 14px;
   }
+}
 
+@media (max-width: 480px) {
+  .sticky-profile {
+    --card-height: 440px;
+    --image-height: 190px;
+    max-width: 100%;
+    padding: 12px 14px;
+  }
+  
+  .profile-name {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  
+  .profile-desc {
+    font-size: 15px;
+    height: auto;
+    min-height: 50px;
+  }
+  
+  .social-icons {
+    gap: 12px;
+  }
+  
+  .social-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
 }

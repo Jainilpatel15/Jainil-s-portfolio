@@ -74,13 +74,6 @@ export const projects = [
     color: '#1a1a2a',
     image: '/src/assets/disease-prediction.jpg',
   },
-  {
-    id: 7,
-    name: 'student performance prediction',
-    tag: 'A machine learning-based system that predicts student performance to support data-driven academic insights and better decision-making.',
-    color: '#1a1a2a',
-    image: '/src/assets/student-performance-prediction.jpg',
-  },
   
 ];
 
